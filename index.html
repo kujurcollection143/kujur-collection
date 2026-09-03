@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kujur Collection — Bhikhampur, Gumla</title>
+<meta name="description" content="Kujur Collection — Saint Albert School, CSC Pragya Kendra, Print Shop aur Computer Store, Bhikhampur Gumla mein ek chhat ke neeche.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1F2A;
+    --ink-soft:#2A2F3D;
+    --paper:#F3ECDD;
+    --paper-dim:#E7DDC6;
+    --turmeric:#D98E04;
+    --sindoor:#B33A3A;
+    --sal-green:#5C7A5E;
+    --copper:#C9793C;
+    --line: rgba(243,236,221,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  .devanagari{ font-family:'Tiro Devanagari Hindi', serif; }
+  .display{ font-family:'Fraunces', serif; }
+
+  a{ color:inherit; text-decoration:none; }
+  :focus-visible{ outline:3px solid var(--turmeric); outline-offset:3px; }
+
+  /* ===== texture backdrop ===== */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:0.05;
+    background-image:radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size:3px 3px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    padding:6vh 6vw 10vh;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217,142,4,0.14), transparent 60%),
+      var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    font-size:0.78rem; letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--turmeric); font-weight:600; margin-bottom:1.6rem;
+    display:flex; align-items:center; gap:0.7rem;
+  }
+  .hero .eyebrow::before, .hero .eyebrow::after{
+    content:''; width:28px; height:1px; background:var(--turmeric); opacity:0.6;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 8vw, 5.6rem);
+    line-height:1.05;
+    font-weight:700;
+    color:var(--paper);
+    margin-bottom:0.4rem;
+  }
+  .hero h1 span{ color:var(--turmeric); font-style:italic; font-weight:600; }
+  .hero .hindi-name{
+    font-size:clamp(1.4rem, 3.6vw, 2.1rem);
+    color:var(--paper-dim);
+    margin-top:0.6rem;
+    margin-bottom:2rem;
+  }
+  .hero .tagline{
+    max-width:36rem;
+    font-size:1.05rem;
+    line-height:1.75;
+    color:rgba(243,236,221,0.72);
+  }
+  .hero .place{
+    margin-top:2.2rem;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    color:var(--sal-green);
+    font-weight:600;
+  }
+  .scroll-cue{
+    position:absolute; bottom:2.4rem; left:50%; transform:translateX(-50%);
+    font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase;
+    color:rgba(243,236,221,0.45);
+    display:flex; flex-direction:column; align-items:center; gap:0.5rem;
+  }
+  .scroll-cue .stick{
+    width:1px; height:34px; background:linear-gradient(to bottom, var(--turmeric), transparent);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+
+  /* ===== SIGNPOST SECTION ===== */
+  .signpost-wrap{
+    position:relative;
+    padding:10vh 6vw 8vh;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .post-label{
+    text-align:center; margin-bottom:4.5rem;
+  }
+  .post-label .num{ color:var(--sindoor); font-weight:700; letter-spacing:0.1em; font-size:0.8rem; text-transform:uppercase; }
+  .post-label h2{
+    font-family:'Fraunces',serif; font-weight:600; font-style:italic;
+    font-size:clamp(1.8rem, 4vw, 2.6rem); margin-top:0.6rem; color:var(--paper);
+  }
+
+  .pole{
+    position:relative;
+    width:14px;
+    background:linear-gradient(180deg, #6b5a3f, #4a3d2a);
+    border-radius:3px;
+    box-shadow:2px 0 6px rgba(0,0,0,0.4);
+  }
+
+  .signpost{
+    display:flex; flex-direction:column; align-items:center;
+    gap:0; width:100%; max-width:900px;
+  }
+
+  .plank-row{
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom: -6px;
+  }
+  .plank-row:nth-child(1) .plank{ align-self:flex-start; }
+  .plank-row:nth-child(2) .plank{ align-self:flex-end; }
+  .plank-row:nth-child(4) .plank{ align-self:flex-start; }
+
+  .plank{
+    position:relative;
+    width:min(78%, 560px);
+    background: linear-gradient(180deg, #E8D8AE, #DAC488);
+    color:#2A2013;
+    border-radius:4px 14px 4px 4px;
+    padding:1.6rem 2.2rem 1.6rem 2rem;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.08);
+    display:flex; align-items:center; gap:1.4rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align:left;
+  }
+  .plank:hover, .plank:focus-visible{
+    transform: translateY(-4px) rotate(-0.4deg);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(0,0,0,0.08);
+  }
+  .plank-row:nth-child(1) .plank{ border-radius:14px 4px 4px 4px; }
+  .plank-row:nth-child(1) .plank::after{ right:auto; left:-13px; border-right-color:#DAC488; border-left-color:transparent; }
+  .plank-row:nth-child(4) .plank{ border-radius:14px 4px 4px 4px; }
+  .plank-row:nth-child(4) .plank::after{ right:auto; left:-13px; border-right-color:#DAC488; border-left-color:transparent; }
+  .plank::after{
+    content:'';
+    position:absolute; top:50%; right:-13px; transform:translateY(-50%);
+    border-top:13px solid transparent; border-bottom:13px solid transparent;
+    border-left:13px solid #DAC488;
+  }
+  .plank .icon{
+    flex-shrink:0;
+    width:48px; height:48px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(42,32,19,0.08);
+    border-radius:50%;
+    font-size:1.5rem;
+  }
+  .plank .txt h3{
+    font-size:1.15rem; font-weight:700; margin-bottom:0.2rem;
+  }
+  .plank .txt .hindi{ font-family:'Tiro Devanagari Hindi',serif; font-size:1.02rem; opacity:0.85; margin-bottom:0.3rem; }
+  .plank .txt p{ font-size:0.86rem; line-height:1.5; opacity:0.75; }
+  .plank .go{
+    margin-left:auto; flex-shrink:0;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.04em;
+    padding:0.45rem 0.9rem;
+    border:1.5px solid rgba(42,32,19,0.35);
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .plank[data-soon="true"] .go{ opacity:0.55; }
+
+  .post-base{
+    width:64px; height:22px;
+    background:radial-gradient(ellipse, #3a2e1c, transparent 70%);
+    margin-top:-4px;
+  }
+
+  /* row color accents per business */
+  .plank.school{ background:linear-gradient(180deg, #E7DEB8, #D6C288); }
+  .plank.csc{ background:linear-gradient(180deg, #DCE7DA, #C3D8C0); }
+  .plank.print{ background:linear-gradient(180deg, #EAD8D2, #DCB9AF); }
+  .plank.computer{ background:linear-gradient(180deg, #D9E2EA, #B7C7D6); }
+  .plank.school::after{ border-left-color:#D6C288; }
+  .plank.csc::after{ border-left-color:#C3D8C0; }
+  .plank.print::after{ border-left-color:#DCB9AF; }
+  .plank.computer::after{ border-left-color:#B7C7D6; }
+
+  /* ===== ABOUT STRIP ===== */
+  .about{
+    padding:9vh 6vw;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap:3.5rem;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .about .lead{ font-family:'Fraunces',serif; font-style:italic; font-weight:600; font-size:1.6rem; line-height:1.4; color:var(--turmeric); }
+  .about .body p{ color:rgba(243,236,221,0.75); line-height:1.85; font-size:0.98rem; margin-bottom:1rem; }
+  .about .body strong{ color:var(--paper); font-weight:600; }
+  @media (max-width:760px){ .about{ grid-template-columns:1fr; } }
+
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid var(--line);
+    padding:4rem 6vw 3rem;
+    text-align:center;
+  }
+  footer .devanagari{ font-size:1.1rem; color:var(--paper-dim); margin-bottom:0.6rem; }
+  footer .contact{ font-size:0.85rem; color:rgba(243,236,221,0.5); }
+  footer .contact a{ color:var(--turmeric); }
+
+  @media (max-width:600px){
+    .plank{ width:96%; flex-wrap:wrap; padding:1.3rem 1.4rem; }
+    .plank .go{ margin-left:0; margin-top:0.6rem; }
+    .plank::after{ display:none; }
+    .plank-row:nth-child(1) .plank, .plank-row:nth-child(2) .plank, .plank-row:nth-child(4) .plank{ align-self:center; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+  ================================================================
+  LINK EDIT KARNE KE LIYE: neeche "LINKS" object mein apni teeno
+  website ke live URL daal dein (jab wo deploy ho jayein).
+  Jaise: school: "https://saintalbertschool.netlify.app"
+  ================================================================
+-->
+
+<div class="grain"></div>
+
+<section class="hero">
+  <div class="eyebrow">Bhikhampur · Gumla · Jharkhand</div>
+  <h1>Kujur <span>Collection</span></h1>
+  <div class="hindi-name devanagari">कुजूर कलेक्शन</div>
+  <p class="tagline"> सभी ऑनलाइन काम के लिए "कुजुर कलेक्शन " </p> <p class="tagline">शिक्षा से लेकर सरकारी काम, कंप्यूटर सर्विस और प्रिंटिंग तक, गाँव की हर ऑनलाइन ज़रूरत एक ही जगह।</p>
+  <div class="place devanagari">भीखमपुर एवं आस-पास के गाँवों की सेवा में</div>
+  <div class="scroll-cue"><span class="devanagari">नीचे देखें</span><span class="stick"></span></div>
+</section>
+
+<div class="signpost-wrap">
+  <div class="post-label">
+    <div class="num">हमारी सेवाएं</div>
+    <h1>चार काम, एक चौराहा</h1>
+  </div>
+
+  <div class="signpost">
+    <div class="plank-row">
+      <a class="plank school" href="#" data-soon="true" aria-label="Saint Albert English Medium School">
+        <div class="icon">🎓</div>
+        <div class="txt">
+          <h3>Saint Albert School</h3>
+          <div class="hindi">सेंट अल्बर्ट इंग्लिश मीडियम स्कूल</div>
+          <p class="devanagari">नर्सरी से कक्षा 5 तक, इंग्लिश मीडियम शिक्षा</p>
+        </div>
+        <div class="go devanagari">वेबसाइट देखें →</div>
+      </a>
+    </div>
+
+    <div class="plank-row">
+      <a class="plank csc" href="#" data-soon="true" aria-label="CSC Pragya Kendra">
+        <div class="icon">🏛️</div>
+        <div class="txt">
+          <h3>CSC Pragya Kendra</h3>
+          <div class="hindi">सरकारी डिजिटल सेवा केंद्र</div>
+          <p class="devanagari">आधार, पैन, परीक्षा फॉर्म, सरकारी योजना एवं एईपीएस</p>
+        </div>
+        <div class="go devanagari">सेवाएँ देखें →</div>
+      </a>
+    </div>
+
+    <div class="plank-row">
+      <a class="plank print" href="#" data-soon="true" aria-label="Print and Photocopy Shop">
+        <div class="icon">🖨️</div>
+        <div class="txt">
+          <h3>Print &amp; Photocopy Shop</h3>
+          <div class="hindi">प्रिंट एवं फोटोकॉपी दुकान</div>
+          <p class="devanagari">फोटोकॉपी, प्रिंटिंग, लैमिनेशन, फॉर्म भरना</p>
+        </div>
+        <div class="go devanagari">और जानें →</div>
+      </a>
+    </div>
+
+    <div class="plank-row">
+      <a class="plank computer" href="#" data-soon="true" aria-label="Computer Store and Service">
+        <div class="icon">🖥️</div>
+        <div class="txt">
+          <h3>Computer Store &amp; Service</h3>
+          <div class="hindi">कंप्यूटर, लैपटॉप एवं सर्विस</div>
+          <p class="devanagari">नया PC असेंबल, सेकंड हैंड लैपटॉप, रिपेयर एवं सॉफ्टवेयर</p>
+        </div>
+        <div class="go devanagari">स्टोर देखें →</div>
+      </a>
+    </div>
+  </div>
+  <div class="post-base"></div>
+</div>
+
+<section class="about">
+  <div class="lead devanagari">भीखमपुर और  प० अ० ए० जारी क्षेत्र के सभी लोगों की सेवा में उपलब्ध  ।</div>
+  <div class="body devanagari">
+    <p><strong>कुजूर कलेक्शन</strong> गुमला, झारखंड के भीखमपुर गाँव में सभी प्रकार के ऑनलाइन कार्य, चाहे सरकारी या गैर सरकारी फॉर्म भरना हो, बैंक के कार्य, स्कूल के सभी प्रकार के कार्य, सब एक ही जगह उपलब्ध।</p>
+    <p><strong>सेंट अल्बर्ट इंग्लिश मीडियम स्कूल</strong> बच्चों को नर्सरी से कक्षा 5 तक इंग्लिश और हिन्दी दोनों मीडियम में शिक्षा देता है। </p> <strong>सीएससी प्रज्ञा केंद्र</strong> गाँव वालों को पहचान पत्र, पैन, सुधार और नया  ,आधार प्रिंट , परीक्षा फॉर्म, स्कालरशिप फॉर्म , बैंक की जरुरत ,पैसे की जरुरत इत्यादि ,  और सरकारी योजनाओं जैसी डिजिटल सेवाएँ सुलभ कराता है। </p> <strong>प्रिंट एवं फोटोकॉपी दुकान</strong> रोज़-मर्रा के प्रिंटिंग और दस्तावेज़ी कामों में मदद करती है। और हमारा <strong>कंप्यूटर स्टोर</strong> नया PC असेंबल, सेकंड हैंड लैपटॉप, हार्डवेयर रिपेयर और सॉफ्टवेयर इंस्टॉलेशन जैसी सेवाएँ देता है।</p>
+    <p>ऊपर दिए गए किसी भी बोर्ड पर क्लिक करके उस व्यवसाय की पूरी वेबसाइट देख सकते हैं।</p>
+  </div>
+</section>
+
+<footer>
+ 
+  <div class="contact devanagari">भीखमपुर, गुमला, झारखंड · <a href="#">संपर्क करें +918210438195 Payments&WhatsApp ईमेल करें kujurcollection143@gmail.com</a><p style="margin-top:10px;">© 2026 All Rights Reserved | Kujur Collection</p></div>
+</footer>
+
+<script>
+  // ================== LINKS (yahan apna URL daalein) ==================
+  const LINKS = {
+    school:   "school.html",
+    csc:      "csc-print.html#csc",
+    print:    "csc-print.html#print",
+    computer: "computer-sales.html"
+  };
+  // =======================================================================
+
+  const map = { school: LINKS.school, csc: LINKS.csc, print: LINKS.print, computer: LINKS.computer };
+  document.querySelectorAll('.plank').forEach(a => {
+    const key = [...a.classList].find(c => map.hasOwnProperty(c));
+    const url = key && map[key];
+    if (url) {
+      a.href = url;
+      a.removeAttribute('data-soon');
+      a.querySelector('.go').textContent = a.querySelector('.go').textContent.replace('dekhein', 'dekhein').trim();
+    } else {
+      a.removeAttribute('href');
+      a.style.cursor = 'default';
+      a.addEventListener('click', e => e.preventDefault());
+      const go = a.querySelector('.go');
+      go.classList.add('devanagari');
+      go.textContent = 'जल्द ही आ रहा है';
+    }
+  });
+</script>
+
+</body>
+</html>

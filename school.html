@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Albert English Medium School
+  - Bhikhampur</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+
+        body { background: #f0f5f0; }
+
+        /* Header
+  - Green & Yellow Theme */
+        .header {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid #ffd600;
+        }
+        .header h1 { font-size: 2.8rem; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+        .header .yellow { color: #ffd600; }
+        .header p { margin-top: 10px; font-size: 1.1rem; color: #e8f5e9; }
+
+        /* Navigation */
+        .nav {
+            background: #ffd600;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .nav a {
+            color: #1b5e20;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .nav a:hover { background: #1b5e20; color: #ffd600; }
+
+        /* Sections */
+        .section {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #4caf50;
+        }
+        .section h2 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            border-left: 5px solid #ffd600;
+            padding-left: 12px;
+            font-size: 1.8rem;
+        }
+        .section p { color: #333; line-height: 1.7; }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #f9fff9;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 5px solid #ffd600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h4 { color: #2e7d32; margin-bottom: 8px; font-size: 1.2rem; }
+
+        /* Staff Cards */
+        .staff-card {
+            background: linear-gradient(135deg, #e8f5e9, #fffde7);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .staff-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .staff-card .avatar {
+            background: #ffd600;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1b5e20;
+            margin: 0 auto 12px;
+            border: 3px solid #2e7d32;
+        }
+        .staff-card h4 { color: #1b5e20; font-size: 1.2rem; margin-bottom: 5px; }
+        .staff-card .role {
+            background: #2e7d32;
+            color: #ffd600;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .staff-card p { font-size: 0.9rem; color: #333; margin-top: 10px; }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        table, th, td { border: 1px solid #c8e6c9; padding: 12px; text-align: left; }
+        th { background: #2e7d32; color: #ffd600; font-size: 1rem; }
+        tr:nth-child(even) { background: #f1f8e9; }
+
+        /* Notice Board */
+        .notice-list { list-style: none; margin-top: 15px; }
+        .notice-list li {
+            background: #fffde7;
+            border-left: 5px solid #4caf50;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 1rem;
+        }
+        .notice-list .date { color: #2e7d32; font-weight: bold; font-size: 0.85rem; display: block; margin-top: 5px; }
+
+        /* Result Box */
+        .result-box {
+            background: linear-gradient(135deg, #e8f5e9, #fffde7);
+            border: 2px dashed #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .result-box h3 { color: #2e7d32; margin-bottom: 10px; }
+
+        /* Inquiry Form */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; color: #1b5e20; font-weight: bold; margin-bottom: 5px; }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #c8e6c9;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus { outline: none; border-color: #4caf50; }
+        .btn {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .btn:hover { background: #1b5e20; transform: scale(1.05); }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .gallery-item {
+            background: #e8f5e9;
+            height: 150px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1b5e20;
+            border: 2px dashed #4caf50;
+            overflow: hidden;
+        }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Footer */
+        .footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 5px solid #ffd600;
+        }
+        .footer .yellow { color: #ffd600; font-size: 1.2rem; font-weight: bold; }
+        .footer p { margin: 5px 0; color: #e8f5e9; }
+
+        /* Contact info */
+        .contact-info { background: #f1f8e9; padding: 20px; border-radius: 8px; margin-top: 15px; }
+        .contact-info p { font-size: 1.1rem; margin-bottom: 10px; }
+        .contact-info strong { color: #2e7d32; }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.05); background: #128c7e; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8rem; }
+            .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+            .nav a { display: inline-block; margin: 3px; font-size: 0.8rem; }
+            .section { margin: 15px; padding: 15px; }
+            .card-grid { grid-template-columns: 1fr; }
+            table { font-size: 0.85rem; }
+            .whatsapp-btn { padding: 10px 15px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>🌿 Saint <span class="yellow">Albert</span> English Medium School </h1> <p>(UDISE Code: 20161407604)</p>
+        <p>📍 Village Bhikhampur, Post Bhikhampur, PS. Jari, District Gumla, Jharkhand – 835230</p>
+        <p>🎓 Nursery to Class 5 | English Medium | Quality Education</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="index.html">⬅ Kujur Collection</a>
+        <a href="#home">🏠 Home</a>
+        <a href="#about">📘 About</a>
+        <a href="#staff">👩‍🏫 Staff</a>
+        <a href="#admission">📝 Admission</a>
+        <a href="#student-corner">🎒 Student Corner</a>
+        <a href="#notice-corner">📢 Notice</a>
+        <a href="#inquiry-corner">❓ Inquiry</a>
+        <a href="#result-corner">📊 Result</a>
+        <a href="#academics">📚 Academics</a>
+        <a href="#gallery">🖼️ Gallery</a>
+        <a href="#contact">☎️ Contact</a>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919572100972" target="_blank" class="whatsapp-btn">
+        💬 WhatsApp
+    </a>
+
+    <!-- Home -->
+    <div id="home" class="section">
+        <h2>🏫 आपका स्वागत है!</h2>
+        <p>Saint Albert English Medium School, Bhikhampur में हार्दिक स्वागत है। हमारा मिशन: <strong>"हर बच्चे को गुणवत्तापूर्ण शिक्षा, अच्छे संस्कार, और आधुनिक शिक्षण पद्धति"</strong>।</p>
+        <p>हम Nursery से Class 5 तक के बच्चों को अंग्रेजी और हिन्दी माध्यम में शिक्षा देते हैं — साथ ही खेल, कला, संगीत, और नैतिक शिक्षा पर भी विशेष ध्यान देते हैं। 🎨⚽🎵</p>
+        <div class="card-grid">
+            <div class="card">
+                <h4>🎯 Vision</h4>
+                <p>हर बच्चे को आत्मनिर्भर और सफल इंसान बनाना।</p>
+            </div>
+            <div class="card">
+                <h4>🌟 Mission</h4>
+                <p>गुणवत्तापूर्ण शिक्षा + संस्कार + खुशनुमा वातावरण।</p>
+            </div>
+            <div class="card">
+                <h4>🏅 Unique Features</h4>
+                <p>छोटी कक्षाएं, व्यक्तिगत ध्यान, अंग्रेजी और हिन्दी मीडियम।</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="section">
+        <h2>📘 About Us</h2>
+        <p>हमारा स्कूल ग्रामीण परिवेश में बच्चों को विश्वस्तरीय शिक्षा देने के लिए स्थापित किया गया है। हमारे अनुभवी शिक्षक, सुरक्षित वातावरण, और आधुनिक शिक्षण तकनीक बच्चों के सर्वांगीण विकास में मददगार हैं।</p>
+        <div class="card-grid">
+            <div class="card"><h4>🏫 स्थापना</h4><p>ग्रामीण क्षेत्रों में गुणवत्ता शिक्षा का उद्देश्य</p></div>
+            <div class="card"><h4>👨‍🏫 शिक्षक</h4><p>योग्य और अनुभवी शिक्षक</p></div>
+            <div class="card"><h4>🎓 कक्षाएं</h4><p>Nursery to Class 5</p></div>
+            <div class="card"><h4>📖 माध्यम</h4><p>अंग्रेजी एवं हिन्दी  माध्यम </p></div>
+        </div>
+    </div>
+
+    <!-- Staff Section (All Members) -->
+    <div id="staff" class="section">
+        <h2>👩‍🏫 हमारी टीम (Our Staff)</h2>
+        <p>हमारे समर्पित शिक्षकों की टीम बच्चों के सर्वांगीण विकास के लिए हमेशा तत्पर है। हर एक शिक्षक अपने विषय में विशेषज्ञ और पूर्ण रूप से प्रशिक्षित हैं।</p>
+        
+        <div class="card-grid">
+            <!-- Staff 1: Principal -->
+            <div class="staff-card">
+                <div class="avatar">👩‍🏫</div>
+                <h4>Pratima Kujur</h4>
+                <div class="role">Principal (प्रधानाचार्या)</div>
+                <p>स्कूल की मुखिया एवं सभी शैक्षणिक गतिविधियों की संचालक। बच्चों के सर्वांगीण विकास के लिए समर्पित।</p>
+            </div>
+
+            <!-- Staff 2: Vice Principal -->
+            <div class="staff-card">
+                <div class="avatar">👨‍🏫</div>
+                <h4>Zephrin Toppo</h4>
+                <div class="role">Vice Principal (उप-प्रधानाचार्य)</div>
+                <p>शैक्षणिक मामलों के सहायक प्रमुख, अनुशासन और समन्वय की जिम्मेदारी।</p>
+            </div>
+
+            <!-- Staff 3: ICT Instructor -->
+            <div class="staff-card">
+                <div class="avatar">💻</div>
+                <h4>Deep J. Kujur</h4>
+                <div class="role">ICT Instructor & School Coordinator</div>
+                <p>कंप्यूटर शिक्षा और स्कूल के दैनिक क्रियाकलापों के समन्वयकर्ता।</p>
+            </div>
+
+            <!-- Staff 4: Office Management & Teacher -->
+            <div class="staff-card">
+                <div class="avatar">📋</div>
+                <h4>Suchita Tirkey</h4>
+                <div class="role">Office Management & Teacher</div>
+                <p>स्कूल कार्यालय प्रबंधन के साथ-साथ विषय शिक्षक की भूमिका।</p>
+            </div>
+
+            <!-- Staff 5: Teacher -->
+            <div class="staff-card">
+                <div class="avatar">📚</div>
+                <h4>Roshni Toppo</h4>
+                <div class="role">Teacher</div>
+                <p>प्राथमिक कक्षाओं की शिक्षिका, बच्चों की बुनियादी शिक्षा की मजबूत नींव रखना।</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admissions -->
+    <div id="admission" class="section">
+        <h2>📝 प्रवेश प्रक्रिया (Admission Open 2025-26)</h2>
+        <p>नए सत्र के लिए प्रवेश जारी है! विवरण नीचे:</p>
+        <table>
+            <tr>
+                <th>कक्षा</th>
+                <th>आयु (उम्र)</th>
+                <th>आवश्यक दस्तावेज़</th>
+                <th>प्रक्रिया</th>
+            </tr>
+            <tr>
+                <td>Nursery</td>
+                <td>3+ वर्ष</td>
+                <td>जन्म प्रमाण पत्र(बच्चे)+पासपोर्ट फोटो + अभिभावक का आधार कार्ड </td>
+                <td>पंजीकरण फॉर्म भरें</td>
+            </tr>
+            <tr>
+                <td>LKG</td>
+                <td>4+ वर्ष</td>
+                <td>जन्म प्रमाण पत्र + पासपोर्ट फोटो+आधार कार्ड (बच्चे और अभिभावक )</td>
+                <td>फॉर्म + साक्षात्कार</td>
+            </tr>
+            <tr>
+                <td>UKG</td>
+                <td>5+ वर्ष</td>
+                <td>पिछली कक्षा की रिपोर्ट+जन्म प्रमाण पत्र + पासपोर्ट फोटो+आधार कार्ड (बच्चे और अभिभावक )</td>
+                <td>फॉर्म + मूल्यांकन</td>
+            </tr>
+            <tr>
+                <td>Class 1-5</td>
+                <td>6-10 वर्ष</td>
+                <td>TC + रिपोर्ट कार्ड + जन्म प्रमाण पत्र + पासपोर्ट फोटो+आधार कार्ड (बच्चे और अभिभावक )</td>
+                <td>प्रवेश परीक्षा</td>
+            </tr>
+        </table>
+        <p style="margin-top:15px;"><strong>📞 प्रवेश हेतु संपर्क करें:</strong> 📱 +91-8210438195 | 📧 Kujurcollection143@gmail.com</p>
+    </div>
+
+    <!-- Student Corner -->
+    <div id="student-corner" class="section">
+        <h2>🎒 Student Corner</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h4>📅 कक्षा का समय</h4>
+                <p>सोमवार
+  - शनिवार: 8:00 AM
+  - 2:30 PM</p>
+            </div>
+            <div class="card">
+                <h4>📖 होमवर्क / Syllabus</h4>
+                <p>कक्षा-वार होमवर्क और सिलेबस शिक्षक से मिलेगा।</p>
+            </div>
+            <div class="card">
+                <h4>🏆 ओलिंपियाड 7.0 </h4>
+                <p>1.कक्षा 3 से कक्षा 5 के विद्यार्थियों के लिए विभिन्न विषयों में ओलिंपियाड में भाग लेने का अवसर ।</p>
+
+                  <p> 2. ऑनलाइन स्टडी मटेरियल उपलब्ध ।</p>
+
+        <p> 3. 5 Mock Tests & 5 Practice Tests .</p>
+
+       <p> 4. Artificial Intelligence (AI) आधारित तैयारी ।</p>
+
+       <p> 5. घर बैठे ऑनलाइन स्टडी मटेरियल के माध्यम से तैयारी की सुविधा ।</p>
+            </div>
+            <div class="card">
+                <h4>📞 हेल्पलाइन</h4>
+                <p>📱 +91-8210438195 (व्हाट्सएप पर भी संपर्क करें)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notice Corner -->
+    <div id="notice-corner" class="section">
+        <h2>📢 Notice Corner</h2>
+        <ul class="notice-list">
+            <li>🎉 <strong>नया सत्र प्रारम्भ:</strong> 1 अप्रैल 2026 से नया अकादमिक सत्र शुरू होगा।<span class="date">📅 दिनांक: 10 मार्च 2026</span></li>
+            <li>📝 <strong>प्रवेश मेला:</strong> प्रवेश के लिए अंतिम तिथि 31 मार्च 2026 है।<span class="date">📅 दिनांक: 5 मार्च 2026</span></li>
+            <li>🏆 <strong>वार्षिक खेलकूद प्रतियोगिता:</strong> अकादमिक सत्र के बीच में आयोजित होगी।<span class="date">📅 दिनांक: 1 मार्च 2026</span></li>
+        </ul>
+    </div>
+
+    <!-- Inquiry Corner -->
+    <div id="inquiry-corner" class="section">
+        <h2>❓ Inquiry Corner</h2>
+        <p>कोई भी प्रश्न, सुझाव, या शिकायत हो तो नीचे फॉर्म भरकर भेजें।</p>
+        <form onsubmit="alert('धन्यवाद! आपका संदेश हमें मिल गया। जल्द ही संपर्क करेंगे।'); return false;">
+            <div class="form-group">
+                <label>आपका नाम (Name)</label>
+                <input type="text" required placeholder="अपना नाम लिखें">
+            </div>
+            <div class="form-group">
+                <label>फोन नंबर (Phone)</label>
+                <input type="tel" required placeholder="मोबाइल नंबर" pattern="[0-9]{10}">
+            </div>
+            <div class="form-group">
+                <label>विषय (Subject)</label>
+                <select required>
+                    <option value="">--चुनें--</option>
+                    <option>📝 Admission</option>
+                    <option>💰 Fees</option>
+                    <option>📚 Syllabus</option>
+                    <option>🏫 विद्यालय भ्रमण</option>
+                    <option>❓ अन्य</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>आपका संदेश (Message)</label>
+                <textarea rows="4" required placeholder="अपना संदेश यहाँ लिखें..."></textarea>
+            </div>
+            <button type="submit" class="btn">📩 संदेश भेजें</button>
+        </form>
+        <div class="contact-info" style="margin-top:20px;">
+            <p><strong>📱 सीधा संपर्क:</strong> +91-8210438195</p>
+            <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/919572100972" target="_blank">+91-8210438195 पर WhatsApp करें</a></p>
+            <p><strong>📧 ईमेल:</strong> Kujurcollection143@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- Result Corner -->
+    <div id="result-corner" class="section">
+        <h2>📊 Result Corner</h2>
+        <div class="result-box">
+            <h3>🎉 वार्षिक परीक्षा परिणाम 2024-25</h3>
+            <p><strong>कुल सफलता दर: 100%</strong> 🏆</p>
+            <p>कक्षा 5 के सभी छात्र उत्तीर्ण — सभी को बधाई!</p>
+        </div>
+        <div style="margin-top:20px;">
+            <p><strong>📄 रिजल्ट कैसे देखें?</strong></p>
+            <ul style="margin-left:20px; line-height:2;">
+                <li>प्रत्येक माह के अंत में प्रगति रिपोर्ट दी जाएगी</li>
+                <li>वार्षिक परीक्षा का रिजल्ट स्कूल की नोटिस बोर्ड पर लगाया जाता है</li>
+                <li>Online रिजल्ट देखने के लिए समय-समय पर लिंक यहाँ प्रकाशित होगा</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Academics -->
+    <div id="academics" class="section">
+        <h2>📚 Academics & Facilities</h2>
+        <div class="card-grid">
+            <div class="card"><h4>📖 Curriculum</h4><p>English & Hindi Medium | Jharkhand State Board आधारित पाठ्यक्रम</p></div>
+            <div class="card"><h4>🏫 Facilities</h4><p> खेल किट, खेल मैदान, शुद्ध पेयजल</p></div>
+            <div class="card"><h4>🎨 Co-Activities</h4><p>चित्रकला, संगीत, नृत्य, खेल, सांस्कृतिक कार्यक्रम</p></div>
+            <div class="card"><h4>🚌 Transport</h4><p> Coming soon</p></div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div id="gallery" class="section">
+        <h2>🖼️ School Gallery</h2>
+        <p>हमारे स्कूल की तस्वीरें देखें! 👇</p>
+        <div class="gallery">
+            <div class="gallery-item"><img src="images/photo1.jpg" alt="स्कूल फोटो 1"></div>
+            <div class="gallery-item"><img src="images/photo2.jpg" alt="स्कूल फोटो 2"></div>
+            <div class="gallery-item"><img src="images/photo3.jpg" alt="स्कूल फोटो 3"></div>
+            <div class="gallery-item"><img src="images/photo4.jpg" alt="स्कूल फोटो 4"></div>
+            <div class="gallery-item"><img src="images/photo5.jpg" alt="स्कूल फोटो 5"></div>
+            <div class="gallery-item"><img src="images/photo6.jpg" alt="स्कूल फोटो 6"></div>
+            <div class="gallery-item"><img src="images/photo7.jpg" alt="स्कूल फोटो 7"></div>
+            <div class="gallery-item"><img src="images/photo8.jpg" alt="स्कूल फोटो 8"></div>
+            <div class="gallery-item"><img src="images/photo9.jpg" alt="स्कूल फोटो 9"></div>
+        </div>
+        <p style="margin-top:10px; color:#2e7d32;"><strong></strong></p>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="section">
+        <h2>☎️ Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>📍 पता:</strong> Village Bhikhampur, Post Bhikhampur, PS. Jari, District Gumla, Jharkhand
+  - 835230</p>
+            <p><strong>📱 फोन / WhatsApp:</strong> <a href="https://wa.me/918210438195" target="_blank">+91-8210438195</a></p>
+            <p><strong>📧 ईमेल:</strong> Kujurcollection143@gmail.com</p>
+            <p><strong>⏰ समय:</strong> सोमवार
+  - शनिवार: 8:00 AM
+  - 1:30 PM</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><strong class="yellow">🌿 Saint Albert English Medium School</strong></p>
+        <p>📍 Village Bhikhampur, Post Bhikhampur, PS. Jari, Dist. Gumla, Jharkhand
+  - 835230</p>
+        <p>📱 +91-8210438195 | 📧 Kujurcollection143@gmail.com</p>
+        <p style="margin-top:10px;">© 2026 All Rights Reserved | Kujur Collection</p>
+    </div>
+
+</body>
+</html>

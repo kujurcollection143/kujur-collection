@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kujur Collection — कंप्यूटर, लैपटॉप, सर्विस | Bhikhampur, Gumla</title>
+<meta name="description" content="Kujur Collection — नया डेस्कटॉप असेंबल, सेकंड हैंड लैपटॉप, विंडोज़ व सॉफ्टवेयर इंस्टॉल, स्पीड बूस्ट, हार्डवेयर रिपेयर और मोबाइल फॉर्मेट। Bhikhampur, Gumla, Jharkhand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-dark:#0F1319;
+    --panel-dark:#1A2029;
+    --panel-dark-2:#212836;
+    --copper:#C9793C;
+    --copper-bright:#E39A5C;
+    --teal:#3FA796;
+    --amber:#E8A33D;
+    --cream:#F4EFE4;
+    --cream-2:#EAE2D2;
+    --ink:#1C2029;
+    --ink-soft:#4A4F5A;
+    --line:#33394500;
+    --wire:#3A4150;
+    --radius:14px;
+    --shop-number:"9955XXXXXX";
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:'Hind',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2',sans-serif;
+    margin:0;
+    letter-spacing:0.2px;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  ::selection{background:var(--copper); color:#fff;}
+  :focus-visible{outline:3px solid var(--amber); outline-offset:3px; border-radius:4px;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--ink-dark);
+    color:var(--cream-2);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.3px;
+  }
+  .topbar .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:8px 24px; flex-wrap:wrap; gap:6px;
+  }
+  .topbar .tag{color:var(--amber);}
+
+  header.nav{
+    background:var(--ink-dark);
+    position:sticky; top:0; z-index:50;
+    border-bottom:1px solid #2A3140;
+  }
+  header.nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; color:var(--cream);}
+  .brand .chip{
+    width:34px; height:34px; border-radius:8px;
+    background:linear-gradient(155deg, var(--copper), var(--copper-bright));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 2px #2A3140, 0 0 14px rgba(201,121,60,0.55);
+  }
+  .brand .chip svg{width:18px;height:18px;}
+  .brand-text{font-family:'Baloo 2'; font-weight:700; font-size:19px; line-height:1.1;}
+  .brand-text small{display:block; font-family:'Hind'; font-weight:500; font-size:11.5px; color:var(--copper-bright); letter-spacing:0.5px;}
+  .nav-cta{display:flex; gap:10px;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 18px; border-radius:999px; font-weight:600; font-size:14.5px;
+    text-decoration:none; border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-copper{background:var(--copper); color:#fff; box-shadow:0 4px 14px rgba(201,121,60,0.35);}
+  .btn-copper:hover{background:var(--copper-bright); box-shadow:0 6px 18px rgba(201,121,60,0.5);}
+  .btn-ghost{background:transparent; border-color:#3A4150; color:var(--cream-2);}
+  .btn-ghost:hover{border-color:var(--copper-bright); color:var(--copper-bright);}
+  .btn-dark{background:var(--ink-dark); color:var(--cream); box-shadow:0 4px 14px rgba(0,0,0,0.25);}
+  .btn-sm{padding:7px 14px; font-size:13px; border-radius:999px;}
+  .btn svg{width:16px; height:16px; flex-shrink:0;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(ellipse at 70% -10%, #232C3B 0%, var(--ink-dark) 55%);
+    color:var(--cream);
+    overflow:hidden;
+    padding:72px 0 96px;
+  }
+  .hero svg.traces{
+    position:absolute; inset:0; width:100%; height:100%;
+    opacity:0.55; pointer-events:none;
+  }
+  .hero svg.traces .trace{
+    fill:none; stroke:var(--wire); stroke-width:1.5;
+  }
+  .hero svg.traces .trace.live{
+    stroke:var(--copper); stroke-width:1.8;
+    stroke-dasharray:6 10;
+    animation:flow 5s linear infinite;
+  }
+  .hero svg.traces .node{fill:var(--copper); opacity:0.9;}
+  .hero svg.traces .node.pulse{animation:pulse 2.6s ease-in-out infinite;}
+  @keyframes flow{ to{ stroke-dashoffset:-160; } }
+  @keyframes pulse{ 0%,100%{opacity:.55; r:3.4;} 50%{opacity:1; r:5;} }
+
+  .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono'; font-size:12.5px; color:var(--teal);
+    border:1px solid #2E5E56; background:rgba(63,167,150,0.08);
+    padding:6px 12px; border-radius:999px; margin-bottom:20px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--teal); box-shadow:0 0 8px var(--teal);}
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 52px);
+    line-height:1.12; font-weight:800; color:#fff;
+  }
+  .hero h1 span{color:var(--copper-bright);}
+  .hero p.lede{
+    font-size:17px; color:#B9C0CC; margin-top:18px; max-width:52ch; line-height:1.65;
+  }
+  .hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .hero-strip{
+    margin-top:40px; display:flex; gap:26px; flex-wrap:wrap;
+  }
+  .hero-strip .item{font-family:'JetBrains Mono'; font-size:12px; color:#8B93A3; display:flex; align-items:center; gap:8px;}
+  .hero-strip .item b{color:var(--cream);}
+
+  .chipboard{
+    position:relative; background:var(--panel-dark);
+    border:1px solid #2A3140; border-radius:20px; padding:26px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.4);
+  }
+  .chipboard .ic{
+    width:56px; height:56px; border-radius:12px; background:var(--ink-dark);
+    border:1px solid #333B4A; display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .chipboard .ic svg{width:28px; height:28px; stroke:var(--copper-bright);}
+  .chipboard h3{color:#fff; font-size:20px; margin-bottom:8px;}
+  .chipboard p{color:#9AA2B1; font-size:14.5px; line-height:1.6; margin:0 0 16px;}
+  .chipboard .specs{display:flex; flex-direction:column; gap:8px; font-family:'JetBrains Mono'; font-size:12.5px; color:#7F8798;}
+  .chipboard .specs div{display:flex; justify-content:space-between; border-bottom:1px dashed #2C3444; padding-bottom:8px;}
+  .chipboard .specs b{color:var(--teal); font-weight:500;}
+
+  /* ---------- PC Builder ---------- */
+  .builder{background:var(--cream); position:relative;}
+  .builder-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:32px; align-items:start;}
+
+  .slot-form{background:#fff; border:1px solid #E4DCC9; border-radius:20px; padding:30px; display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .slot{display:flex; flex-direction:column; gap:8px;}
+  .slot.full{grid-column:1 / -1;}
+  .slot label{
+    display:flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:700; color:var(--ink); font-family:'JetBrains Mono';
+  }
+  .slot label .led{
+    width:8px; height:8px; border-radius:50%; background:#D8CDB6; flex-shrink:0;
+    transition:background .2s ease, box-shadow .2s ease;
+  }
+  .slot.filled label .led{background:var(--teal); box-shadow:0 0 8px var(--teal);}
+  .slot select, .slot input, .slot textarea{
+    font-family:'Hind'; font-size:14.5px; color:var(--ink);
+    border:1.5px solid #E4DCC9; border-radius:10px; padding:11px 13px;
+    background:var(--cream-2); appearance:none; -webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23C9793C' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 14px center;
+    transition:border-color .18s ease, background-color .18s ease;
+  }
+  .slot input, .slot textarea{background-image:none;}
+  .slot select:focus, .slot input:focus, .slot textarea:focus{border-color:var(--copper); background:#fff; outline:none;}
+  .slot textarea{resize:vertical; min-height:70px; font-family:'Hind';}
+  .slot-hint{font-size:11.5px; color:var(--ink-soft); font-family:'Hind';}
+
+  .ticket{
+    position:sticky; top:90px;
+    background:var(--ink-dark); border-radius:20px; padding:0; overflow:hidden;
+    border:1px solid #2A3140; box-shadow:0 20px 50px rgba(0,0,0,0.4);
+  }
+  .ticket-head{
+    padding:22px 24px; border-bottom:1px dashed #333B4A;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .ticket-head h3{color:#fff; font-size:17px;}
+  .ticket-head .count{
+    font-family:'JetBrains Mono'; font-size:12px; color:var(--amber);
+    background:rgba(232,163,61,0.12); border:1px solid rgba(232,163,61,0.35);
+    padding:4px 10px; border-radius:999px;
+  }
+  .ticket-body{padding:18px 24px; display:flex; flex-direction:column; gap:2px; min-height:170px;}
+  .ticket-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:9px 0; border-bottom:1px dashed #262D3A; font-size:13.5px;
+  }
+  .ticket-row .k{color:#7F8798; font-family:'JetBrains Mono'; font-size:11.5px;}
+  .ticket-row .v{color:var(--cream); font-weight:600; text-align:right;}
+  .ticket-row .v.empty{color:#4E5566; font-weight:400;}
+  .ticket-foot{padding:20px 24px 24px;}
+  .ticket-foot .btn{width:100%; justify-content:center;}
+  .ticket-foot p{font-size:11.5px; color:#68707F; margin:10px 0 0; text-align:center; line-height:1.5;}
+
+  @media (max-width:900px){
+    .builder-grid{grid-template-columns:1fr;}
+    .slot-form{grid-template-columns:1fr;}
+    .ticket{position:static;}
+  }
+
+  /* ---------- Ready-made PCs ---------- */
+  .readymade{background:var(--cream-2);}
+  .rm-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .rm-card{
+    position:relative; background:var(--ink-dark); border-radius:20px; padding:2px;
+    overflow:hidden;
+  }
+  .rm-card::before{
+    content:""; position:absolute; inset:-40%;
+    background:conic-gradient(from 0deg, var(--copper), transparent 25%, transparent 75%, var(--copper));
+    animation:spin 6s linear infinite;
+  }
+  .rm-card:hover::before{animation-duration:2.4s;}
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .rm-inner{
+    position:relative; background:var(--ink-dark); border-radius:18px; padding:26px;
+    z-index:1; height:100%; display:flex; flex-direction:column;
+  }
+  .rm-badge{
+    display:inline-flex; align-self:flex-start; align-items:center; gap:6px;
+    font-family:'Baloo 2'; font-weight:800; font-size:13px; color:var(--ink-dark);
+    background:var(--amber); padding:4px 12px; border-radius:999px; margin-bottom:16px;
+  }
+  .rm-inner h3{color:#fff; font-size:20px; margin-bottom:4px;}
+  .rm-inner .rm-tag{color:var(--teal); font-family:'JetBrains Mono'; font-size:12px; margin-bottom:18px; display:block;}
+  .rm-specs{display:flex; flex-direction:column; gap:9px; flex-grow:1; margin-bottom:18px;}
+  .rm-specs div{display:flex; justify-content:space-between; font-size:13.5px; border-bottom:1px dashed #2C3444; padding-bottom:9px;}
+  .rm-specs .k{color:#7F8798; font-family:'JetBrains Mono'; font-size:11.5px;}
+  .rm-specs .v{color:var(--cream); font-weight:600;}
+  .rm-price{font-family:'JetBrains Mono'; font-size:12px; color:var(--copper-bright); margin-bottom:16px;}
+  .rm-inner .btn{width:100%; justify-content:center;}
+  @media (max-width:980px){ .rm-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){ .rm-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--cream-2); border-top:1px solid #E0D6C0; border-bottom:1px solid #E0D6C0;}
+  .trust .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+  .trust .item{
+    display:flex; align-items:center; gap:12px; padding:20px 18px;
+    border-right:1px solid #E0D6C0;
+  }
+  .trust .item:last-child{border-right:none;}
+  .trust .item svg{width:26px; height:26px; stroke:var(--copper); flex-shrink:0;}
+  .trust .item .t{font-weight:700; font-size:14.5px; color:var(--ink);}
+  .trust .item .s{font-size:12.5px; color:var(--ink-soft);}
+
+  /* ---------- Section heads ---------- */
+  section{padding:76px 0;}
+  .sec-head{max-width:640px; margin-bottom:44px;}
+  .sec-eyebrow{
+    font-family:'JetBrains Mono'; font-size:12.5px; letter-spacing:0.5px; color:var(--copper);
+    text-transform:uppercase; margin-bottom:10px; display:block;
+  }
+  .sec-head h2{font-size:clamp(26px,3.2vw,36px); font-weight:800; color:var(--ink); line-height:1.2;}
+  .sec-head p{margin-top:12px; color:var(--ink-soft); font-size:15.5px; line-height:1.6;}
+
+  /* ---------- Services : parts bin grid ---------- */
+  .bin-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .bin-card{
+    position:relative; background:#fff; border:1px solid #E4DCC9; border-radius:var(--radius);
+    padding:22px 20px 20px; display:flex; flex-direction:column; gap:12px;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .bin-card:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(28,32,41,0.1); border-color:var(--copper);}
+  .bin-card .tag{
+    position:absolute; top:-9px; left:16px; background:var(--ink-dark); color:var(--amber);
+    font-family:'JetBrains Mono'; font-size:10.5px; padding:3px 9px; border-radius:5px; letter-spacing:0.4px;
+  }
+  .bin-card .ic{
+    width:44px; height:44px; border-radius:10px; background:var(--cream-2);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .bin-card .ic svg{width:24px; height:24px; stroke:var(--copper);}
+  .bin-card h3{font-size:16.5px; font-weight:700; color:var(--ink); line-height:1.35;}
+  .bin-card p{font-size:13.5px; color:var(--ink-soft); line-height:1.55; margin:0; flex-grow:1;}
+  .bin-card .row{display:flex; align-items:center; justify-content:space-between; margin-top:4px;}
+  .bin-card .price{font-family:'JetBrains Mono'; font-size:12px; color:var(--teal); font-weight:600;}
+  .bin-card .order{
+    font-size:12.5px; font-weight:700; color:var(--copper); text-decoration:none;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .bin-card .order svg{width:13px; height:13px;}
+
+  @media (max-width:980px){ .bin-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .bin-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Student band ---------- */
+  .students{
+    background:var(--ink-dark); color:var(--cream); position:relative; overflow:hidden;
+  }
+  .students::before{
+    content:""; position:absolute; right:-80px; top:-80px; width:340px; height:340px;
+    border-radius:50%; background:radial-gradient(circle, rgba(201,121,60,0.25), transparent 70%);
+  }
+  .students .grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; position:relative; z-index:1;}
+  .students .badge{
+    display:inline-flex; align-items:center; gap:8px; background:rgba(232,163,61,0.12);
+    border:1px solid rgba(232,163,61,0.4); color:var(--amber); font-family:'JetBrains Mono';
+    font-size:12px; padding:6px 12px; border-radius:999px; margin-bottom:18px;
+  }
+  .students h2{font-size:clamp(26px,3vw,34px); font-weight:800; color:#fff; line-height:1.25;}
+  .students h2 em{font-style:normal; color:var(--copper-bright);}
+  .students p.lede{color:#AEB5C2; font-size:15.5px; margin-top:14px; line-height:1.65; max-width:46ch;}
+  .students ul{list-style:none; margin:26px 0 0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .students li{display:flex; gap:12px; align-items:flex-start; font-size:15px; color:#D4D9E1;}
+  .students li svg{width:19px; height:19px; stroke:var(--teal); flex-shrink:0; margin-top:2px;}
+  .students .card{
+    background:var(--panel-dark); border:1px solid #2A3140; border-radius:18px; padding:28px;
+  }
+  .students .card .stamp{
+    display:inline-block; font-family:'Baloo 2'; font-weight:800; font-size:15px;
+    color:var(--ink-dark); background:var(--amber); padding:5px 12px; border-radius:6px;
+    transform:rotate(-3deg); margin-bottom:16px;
+  }
+  .students .card h3{color:#fff; font-size:19px; margin-bottom:10px;}
+  .students .card p{color:#9AA2B1; font-size:14px; line-height:1.6; margin:0 0 18px;}
+  .students .card .id-row{
+    display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono'; font-size:12.5px;
+    color:#7F8798; border-top:1px dashed #2C3444; padding-top:16px;
+  }
+
+  @media (max-width:860px){ .students .grid{grid-template-columns:1fr;} }
+
+  /* ---------- How it works ---------- */
+  .steps{background:var(--cream);}
+  .step-row{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .step{
+    background:#fff; border:1px solid #E4DCC9; border-radius:var(--radius); padding:26px 22px;
+    position:relative;
+  }
+  .step .num{
+    font-family:'Baloo 2'; font-weight:800; font-size:34px; color:var(--cream-2);
+    -webkit-text-stroke:1.5px var(--copper); color:transparent; margin-bottom:10px; display:block;
+  }
+  .step h3{font-size:16.5px; font-weight:700; margin-bottom:8px; color:var(--ink);}
+  .step p{font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;}
+  @media (max-width:860px){ .step-row{grid-template-columns:1fr;} }
+
+  /* ---------- Contact / footer ---------- */
+  footer{background:var(--ink-dark); color:#AEB5C2; padding:60px 0 30px;}
+  .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:36px; border-bottom:1px solid #262D3A;}
+  footer h4{color:#fff; font-family:'Baloo 2'; font-size:16px; margin-bottom:14px;}
+  footer p, footer li{font-size:14px; line-height:1.75; color:#9AA2B1;}
+  footer ul{list-style:none; padding:0; margin:0;}
+  footer a.flink{text-decoration:none; color:#9AA2B1;}
+  footer a.flink:hover{color:var(--copper-bright);}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:22px; font-size:12.5px; color:#68707F; flex-wrap:wrap; gap:10px;}
+  .foot-bottom .mono{color:#68707F;}
+
+  @media (max-width:860px){ .foot-grid{grid-template-columns:1fr; gap:26px;} }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .float-wa{
+    position:fixed; bottom:22px; right:22px; z-index:60;
+    background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    box-shadow:0 8px 24px rgba(37,211,102,0.5);
+    animation:floatpulse 2.8s ease-in-out infinite;
+  }
+  .float-wa svg{width:28px;height:28px;}
+  @keyframes floatpulse{ 0%,100%{box-shadow:0 8px 24px rgba(37,211,102,0.45);} 50%{box-shadow:0 8px 30px rgba(37,211,102,0.75);} }
+
+  @media (max-width:980px){
+    .hero-inner{grid-template-columns:1fr;}
+    .chipboard{order:-1;}
+    .trust .wrap{grid-template-columns:repeat(2,1fr);}
+    .trust .item{border-bottom:1px solid #E0D6C0;}
+  }
+  @media (max-width:640px){
+    .nav-cta .btn-ghost{display:none;}
+    .trust .wrap{grid-template-columns:1fr;}
+    .trust .item{border-right:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="tag">●</span> Opp. Bhikhampur Bazar Tand, Post Bhikhampur, Gumla, Jharkhand — 835230</span>
+    <span>📞 +91 82104 38195 &nbsp;·&nbsp; सोम–शनि 9AM–7PM,Sunday 10AM–4PM </span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0F1319" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+      </div>
+      <div class="brand-text">Kujur Collection<small>Computer · Laptop · Service</small></div>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="index.html">⬅ Kujur Collection</a>
+      <a class="btn btn-ghost btn-sm" href="#builder">अपना PC बनाइए</a>
+      <a class="btn btn-ghost btn-sm" href="#services">सर्विस देखें</a>
+      <a class="btn btn-copper btn-sm" id="nav-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A9 9 0 003.5 17.9L2 22l4.2-1.4A9 9 0 1017.6 6.3zm-5.6 14a7.5 7.5 0 01-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.5 7.5 0 1114.1-4.7 7.5 7.5 0 01-7.9 8zm4.1-5.6c-.2-.1-1.3-.7-1.6-.7-.2-.1-.4-.1-.5.1-.2.2-.6.7-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.8-2-1.4-.5-.5-1-1.1-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-1 1.5-1 2.4.1 1 .5 2 1.2 2.9 1.2 1.7 2.7 3 4.6 3.7.5.2 1 .3 1.5.4.6.1 1.1.1 1.5 0 .5-.1 1.3-.5 1.5-1 .2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>
+        WhatsApp पर ऑर्डर
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="traces" viewBox="0 0 1180 560" preserveAspectRatio="none" aria-hidden="true">
+    <path class="trace" d="M0 90 H260 L300 130 V220 L340 260 H620"/>
+    <path class="trace" d="M0 320 H180 L220 360 V420 H460 L500 460 H900"/>
+    <path class="trace live" d="M900 60 H700 L660 100 V240 L620 280 H400 L360 320 V420"/>
+    <path class="trace" d="M1180 140 H960 L920 180 V300 H760"/>
+    <path class="trace live" d="M1180 420 H980 L940 380 V240 L900 200"/>
+    <circle class="node pulse" cx="620" cy="280" r="4"/>
+    <circle class="node pulse" cx="900" cy="200" r="4"/>
+    <circle class="node" cx="340" cy="260" r="3.5"/>
+    <circle class="node" cx="500" cy="460" r="3.5"/>
+    <circle class="node" cx="760" cy="300" r="3.5"/>
+    <circle class="node pulse" cx="360" cy="320" r="4"/>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>हरेक student के पास अपना स्मार्ट कंप्यूटर बजट पे मोबाइल के रेट पर   — यहाँ से आर्डर और असेम्बल कराईए  आपकी ज़रूरत के हिसाब से  </span>
+      <h1> हर घर में अपना कंप्यूटर ,   
+GEN-Alpha,GEN-Z, GEN-Millennial को स्मार्ट बनना हमारा लक्ष्य है   <span>स्मार्ट झारखण्ड </span> , स्मार्ट इंडिया </h1>
+      <p class="lede">नया PC असेंबल, सेकंड हैंड लैपटॉप, विंडोज़-सॉफ्टवेयर इंस्टॉल, स्लो कंप्यूटर की स्पीड बूस्ट, हार्डवेयर एवं सॉफ्टवेयर इंस्टालेशन साथ में एंड्राइड मोबाइल सॉफ्टवेयर प्रॉब्लम ,फॉर्मेट — सब एक ही जगह, ऑर्डर पर।</p>
+      <div class="hero-ctas">
+        <a class="btn btn-copper" id="hero-wa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A9 9 0 003.5 17.9L2 22l4.2-1.4A9 9 0 1017.6 6.3zm-5.6 14a7.5 7.5 0 01-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.5 7.5 0 1114.1-4.7 7.5 7.5 0 01-7.9 8z"/></svg>
+          WhatsApp पर ऑर्डर करें
+        </a>
+        <a class="btn btn-ghost" id="hero-call" href="tel:+918210438195">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .7 3a2 2 0 01-.4 2.1L8 10.3a16 16 0 006 6l1.5-1.5a2 2 0 012.1-.4c1 .4 2 .6 3 .7a2 2 0 011.4 2z"/></svg>
+          कॉल करें
+        </a>
+      </div>
+      <div class="hero-strip">
+        <span class="item"><b>500+</b> डिवाइस सर्विस हो चुके</span>
+        <span class="item"><b>Students</b> के लिए खास छूट</span>
+        <span class="item"><b>Genuine Parts</b> ही लगते हैं</span>
+      </div>
+    </div>
+
+    <div class="chipboard">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div>
+      <h3>मेरा असेंबल</h3>
+      <p>बजट बताइए, हम आपके काम एवं हिसाब से  — पढ़ाई, गेमिंग या दुकान की जरुरत के अनुसार पार्ट्स चुनकर असेंबल करते हैं।</p>
+      <div class="specs">
+        <div>Processor <b>बजट अनुसार</b></div>
+        <div>RAM / Storage <b>ज़रूरत अनुसार</b></div>
+        <div>Assembly + Testing <b>दुकान पर</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8-8 10-4.6-2-8-5-8-10V6z"/></svg>
+      <div><div class="t">जेन्युइन पार्ट्स</div><div class="s">कोई क्लोन नहीं</div></div>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <div><div class="t">जल्दी सर्विस</div><div class="s">ज़्यादातर काम उसी दिन</div></div>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg>
+      <div><div class="t">अनुभवी टेक्नीशियन</div><div class="s">सालों का हाथ</div></div>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+      <div><div class="t">Students फ्रेंडली</div><div class="s">पढ़ाई का काम पहले</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">हमारी दुकान में मिलता है</span>
+      <h2>हर कंप्यूटर ज़रूरत का एक ही पता</h2>
+      <p>जो चाहिए उस कार्ड पर टैप करें — सीधे WhatsApp पर बात शुरू हो जाएगी, कीमत और समय वहीं तय होगा।</p>
+    </div>
+
+    <div class="bin-grid">
+
+      <div class="bin-card">
+        <span class="tag">BUILD-01</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="12" rx="1"/><path d="M9 19h6M12 15v4"/><circle cx="17" cy="7" r="0.5"/></svg></div>
+        <h3>नया डेस्कटॉप असेंबल</h3>
+        <p>आपकी ज़रूरत और बजट के हिसाब से पार्ट्स चुनकर, टेस्ट करके तैयार पीसी।</p>
+        <div class="row">
+          <span class="price">CUSTOM BUILD</span>
+          <a class="order" href="#" data-svc="नया डेस्कटॉप असेंबल कराना है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">USED-02</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>सेकंड हैंड PC / लैपटॉप</h3>
+        <p>चेक किए हुए सेकंड हैंड कंप्यूटर और लैपटॉप, ऑर्डर पर मंगवाए जाते हैं।</p>
+        <div class="row">
+          <span class="price">ON ORDER</span>
+          <a class="order" href="#" data-svc="सेकंड हैंड कंप्यूटर/लैपटॉप के बारे में जानना है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">SOFT-03</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-2h6v2M9 6h6"/></svg></div>
+        <h3>विंडोज़ व सॉफ्टवेयर इंस्टॉल</h3>
+        <p>नया विंडोज़, ज़रूरी सॉफ्टवेयर और ड्राइवर — सब सेटअप करके देते हैं।</p>
+        <div class="row">
+          <span class="price">इंस्टॉल</span>
+          <a class="order" href="#" data-svc="विंडोज़ / सॉफ्टवेयर इंस्टॉल कराना है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">SPEED-04</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>स्लो कंप्यूटर स्पीड बूस्ट</h3>
+        <p>हैंग होता, धीमा चलता कंप्यूटर — साफ-सफाई और ट्यूनिंग कर फिर तेज़।</p>
+        <div class="row">
+          <span class="price">स्पीड फिक्स</span>
+          <a class="order" href="#" data-svc="मेरा कंप्यूटर बहुत स्लो हो गया है, स्पीड बूस्ट कराना है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">REPAIR-05</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 00-5.7 5.6l-6 6a2 2 0 002.8 2.8l6-6a4 4 0 005.6-5.7l-2.3 2.3-2-2z"/></svg></div>
+        <h3>हार्डवेयर व सॉफ्टवेयर रिपेयर</h3>
+        <p>पार्ट्स की खराबी हो या सॉफ्टवेयर की गड़बड़ — दोनों की जांच व मरम्मत।</p>
+        <div class="row">
+          <span class="price">डायग्नोसिस फ्री</span>
+          <a class="order" href="#" data-svc="हार्डवेयर/सॉफ्टवेयर रिपेयर कराना है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">PART-06</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10v4M10 10v4M14 10v4M18 10v4"/></svg></div>
+        <h3>एसेसरीज़</h3>
+        <p>कंप्यूटर, लैपटॉप और प्रिंटर के लिए सभी ज़रूरी एसेसरीज़ यहीं मिलती हैं।</p>
+        <div class="row">
+          <span class="price">स्टॉक में</span>
+          <a class="order" href="#" data-svc="कंप्यूटर/लैपटॉप/प्रिंटर एसेसरीज़ चाहिए।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">SVC-07</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></div>
+        <h3>कंप्यूटर सर्विसिंग</h3>
+        <p>नियमित सफाई से लेकर पूरी सर्विसिंग तक — घर बैठे या दुकान पर।</p>
+        <div class="row">
+          <span class="price">सर्विस बुक करें</span>
+          <a class="order" href="#" data-svc="कंप्यूटर सर्विसिंग बुक करनी है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+      <div class="bin-card">
+        <span class="tag">MOB-08</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        <h3>मोबाइल फॉर्मेट व सॉफ्टवेयर</h3>
+        <p>मोबाइल हैंग या स्लो हो तो फॉर्मेट और ज़रूरी सॉफ्टवेयर इंस्टॉल भी होता है।</p>
+        <div class="row">
+          <span class="price">मोबाइल सर्विस</span>
+          <a class="order" href="#" data-svc="मोबाइल फॉर्मेट / सॉफ्टवेयर इंस्टॉल कराना है।">ऑर्डर करें →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="builder" class="builder">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Build Your Own PC</span>
+      <h2>अपना PC खुद डिज़ाइन कीजिए</h2>
+      <p>Processor, RAM, SSD, Hard Disk, Graphics Card — जो चाहिए चुनिए। दाईं ओर आपकी "बिल्ड टिकट" बनती जाएगी, और एक क्लिक में पूरा ऑर्डर सीधे हमारे WhatsApp पर पहुंच जाएगा।</p>
+    </div>
+
+    <div class="builder-grid">
+      <form class="slot-form" id="builder-form" onsubmit="return false;">
+
+        <div class="slot" data-slot>
+          <label><span class="led"></span> प्रोसेसर (Processor)</label>
+          <select id="f-cpu">
+            <option value="">चुनिए</option>
+            <option>Intel Core i3</option>
+            <option>Intel Core i5</option>
+            <option>Intel Core i7</option>
+            <option>AMD Ryzen 5</option>
+            <option>AMD Ryzen 7</option>
+            <option>अन्य / पता नहीं — सुझाव चाहिए</option>
+          </select>
+        </div>
+
+        <div class="slot" data-slot>
+          <label><span class="led"></span> RAM</label>
+          <select id="f-ram">
+            <option value="">चुनिए</option>
+            <option>4 GB</option>
+            <option>8 GB</option>
+            <option>16 GB</option>
+            <option>32 GB</option>
+          </select>
+        </div>
+
+        <div class="slot" data-slot>
+          <label><span class="led"></span> SSD</label>
+          <select id="f-ssd">
+            <option value="">चुनिए</option>
+            <option>नहीं चाहिए</option>
+            <option>128 GB</option>
+            <option>256 GB</option>
+            <option>512 GB</option>
+            <option>1 TB</option>
+          </select>
+        </div>
+
+        <div class="slot" data-slot>
+          <label><span class="led"></span> Hard Disk (HDD)</label>
+          <select id="f-hdd">
+            <option value="">चुनिए</option>
+            <option>नहीं चाहिए</option>
+            <option>500 GB</option>
+            <option>1 TB</option>
+            <option>2 TB</option>
+          </select>
+        </div>
+
+        <div class="slot" data-slot>
+          <label><span class="led"></span> ग्राफ़िक्स कार्ड</label>
+          <select id="f-gpu">
+            <option value="">चुनिए</option>
+            <option>इनबिल्ट ग्राफ़िक्स (अलग कार्ड नहीं)</option>
+            <option>GT 710 / 730</option>
+            <option>GTX 1650</option>
+            <option>अन्य / सुझाव चाहिए</option>
+          </select>
+        </div>
+
+        <div class="slot" data-slot>
+          <label><span class="led"></span> मॉनिटर / कैबिनेट</label>
+          <select id="f-extra">
+            <option value="">चुनिए</option>
+            <option>सिर्फ CPU (मॉनिटर नहीं चाहिए)</option>
+            <option>मॉनिटर सहित पूरा सेटअप चाहिए</option>
+            <option>RGB कैबिनेट लाइटिंग भी चाहिए</option>
+          </select>
+        </div>
+
+        <div class="slot full" data-slot>
+          <label><span class="led"></span> काम किसके लिए है</label>
+          <select id="f-use">
+            <option value="">चुनिए</option>
+            <option>पढ़ाई / ऑनलाइन क्लास</option>
+            <option>ऑफिस / अकाउंटिंग काम</option>
+            <option>गेमिंग</option>
+            <option>ग्राफिक डिज़ाइन / एडिटिंग</option>
+            <option>दुकान / बिज़नेस उपयोग</option>
+          </select>
+        </div>
+
+        <div class="slot full" data-slot>
+          <label><span class="led"></span> आपका नाम</label>
+          <input type="text" id="f-name" placeholder="जैसे — राहुल कुजूर">
+        </div>
+
+        <div class="slot full" data-slot>
+          <label><span class="led"></span> मोबाइल नंबर</label>
+          <input type="tel" id="f-phone" placeholder="10 अंकों का मोबाइल नंबर">
+        </div>
+
+        <div class="slot full">
+          <label><span class="led" style="visibility:hidden"></span> बजट / कोई खास बात (वैकल्पिक)</label>
+          <textarea id="f-note" placeholder="जैसे — बजट ₹15,000 तक, या कोई खास ब्रांड चाहिए"></textarea>
+          <span class="slot-hint">यह भरना ज़रूरी नहीं है।</span>
+        </div>
+      </form>
+
+      <div class="ticket">
+        <div class="ticket-head">
+          <h3>🧾 बिल्ड टिकट</h3>
+          <span class="count" id="ticket-count">0/9 भरा</span>
+        </div>
+        <div class="ticket-body" id="ticket-body">
+          <div class="ticket-row"><span class="k">CPU</span><span class="v empty" data-out="cpu">— चुना नहीं</span></div>
+          <div class="ticket-row"><span class="k">RAM</span><span class="v empty" data-out="ram">— चुना नहीं</span></div>
+          <div class="ticket-row"><span class="k">SSD</span><span class="v empty" data-out="ssd">— चुना नहीं</span></div>
+          <div class="ticket-row"><span class="k">HDD</span><span class="v empty" data-out="hdd">— चुना नहीं</span></div>
+          <div class="ticket-row"><span class="k">GPU</span><span class="v empty" data-out="gpu">— चुना नहीं</span></div>
+          <div class="ticket-row"><span class="k">EXTRA</span><span class="v empty" data-out="extra">— चुना नहीं</span></div>
+          <div class="ticket-row"><span class="k">USE</span><span class="v empty" data-out="use">— चुना नहीं</span></div>
+        </div>
+        <div class="ticket-foot">
+          <a class="btn btn-copper" id="builder-submit" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A9 9 0 003.5 17.9L2 22l4.2-1.4A9 9 0 1017.6 6.3zm-5.6 14a7.5 7.5 0 01-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.5 7.5 0 1114.1-4.7 7.5 7.5 0 01-7.9 8z"/></svg>
+            WhatsApp पर ऑर्डर भेजें
+          </a>
+          <p>बटन दबाते ही आपकी पूरी बिल्ड टिकट WhatsApp मैसेज में तैयार मिलेगी — बस भेज दीजिए।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="readymade">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Ready Assembled PC</span>
+      <h2>तुरंत डिलीवरी के लिए तैयार असेंबल्ड PC</h2>
+      <p>खुद बिल्ड नहीं करना? हमारे तैयार सैंपल सेटअप में से चुनिए, यही स्पेसिफिकेशन में ऑर्डर कर दीजिए।</p>
+    </div>
+
+    <div class="rm-grid">
+
+      <div class="rm-card">
+        <div class="rm-inner">
+          <span class="rm-badge">Intel i3</span>
+          <h3>स्टूडेंट स्टार्टर PC</h3>
+          <span class="rm-tag">पढ़ाई, ऑनलाइन क्लास, टाइपिंग के लिए</span>
+          <div class="rm-specs">
+            <div><span class="k">CPU</span><span class="v">Intel Core i3</span></div>
+            <div><span class="k">RAM</span><span class="v">8 GB</span></div>
+            <div><span class="k">SSD</span><span class="v">256 GB</span></div>
+            <div><span class="k">GPU</span><span class="v">इनबिल्ट ग्राफ़िक्स</span></div>
+          </div>
+          <span class="rm-price">शुरुआती कीमत के लिए पूछें</span>
+          <a class="btn btn-copper" href="#" data-sample="मुझे स्टूडेंट स्टार्टर PC (i3, 8GB RAM, 256GB SSD) में ऑर्डर करना है।">
+            इसी में ऑर्डर करें
+          </a>
+        </div>
+      </div>
+
+      <div class="rm-card">
+        <div class="rm-inner">
+          <span class="rm-badge">Intel i5</span>
+          <h3>ऑफिस व बिज़नेस PC</h3>
+          <span class="rm-tag">तेज़ मल्टीटास्किंग और रोज़ के काम के लिए</span>
+          <div class="rm-specs">
+            <div><span class="k">CPU</span><span class="v">Intel Core i5</span></div>
+            <div><span class="k">RAM</span><span class="v">8 GB</span></div>
+            <div><span class="k">SSD</span><span class="v">512 GB</span></div>
+            <div><span class="k">GPU</span><span class="v">इनबिल्ट ग्राफ़िक्स</span></div>
+          </div>
+          <span class="rm-price">शुरुआती कीमत के लिए पूछें</span>
+          <a class="btn btn-copper" href="#" data-sample="मुझे ऑफिस व बिज़नेस PC (i5, 8GB RAM, 512GB SSD) में ऑर्डर करना है।">
+            इसी में ऑर्डर करें
+          </a>
+        </div>
+      </div>
+
+      <div class="rm-card">
+        <div class="rm-inner">
+          <span class="rm-badge">Intel i5</span>
+          <h3>गेमिंग व डिज़ाइन PC</h3>
+          <span class="rm-tag">गेमिंग, एडिटिंग और ग्राफिक डिज़ाइन के लिए</span>
+          <div class="rm-specs">
+            <div><span class="k">CPU</span><span class="v">Intel Core i5</span></div>
+            <div><span class="k">RAM</span><span class="v">16 GB</span></div>
+            <div><span class="k">SSD</span><span class="v">512 GB</span></div>
+            <div><span class="k">GPU</span><span class="v">GTX 1650</span></div>
+          </div>
+          <span class="rm-price">शुरुआती कीमत के लिए पूछें</span>
+          <a class="btn btn-copper" href="#" data-sample="मुझे गेमिंग व डिज़ाइन PC (i5, 16GB RAM, 512GB SSD, GTX 1650) में ऑर्डर करना है।">
+            इसी में ऑर्डर करें
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="students">
+  <div class="wrap grid">
+    <div>
+      <span class="badge">🎓 STUDENT PRIORITY</span>
+      <h2>पढ़ाई में सिस्टम की कमी  <em>रुकावट नहीं चाहिए</em></h2>
+      <p class="lede">एग्ज़ाम फॉर्म भरना हो, ऑनलाइन क्लास लेनी हो या प्रोजेक्ट बनाना हो — Students के काम को हम सबसे पहले लेते हैं।</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Student ID दिखाइए, सर्विस चार्ज में छूट पाइए</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> एग्ज़ाम व फॉर्म भरने के समय के लैपटॉप/PC को प्राथमिकता से ठीक करते हैं</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> कम बजट में पढ़ाई लायक सेकंड हैंड लैपटॉप/PC </li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> ज़रूरी सॉफ्टवेयर (MS Office, टाइपिंग टूल्स) मुफ़्त सेटअप के साथ</li>
+      </ul>
+      <div class="hero-ctas" style="margin-top:28px;">
+        <a class="btn btn-copper" id="student-wa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A9 9 0 003.5 17.9L2 22l4.2-1.4A9 9 0 1017.6 6.3zm-5.6 14a7.5 7.5 0 01-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.5 7.5 0 1114.1-4.7 7.5 7.5 0 01-7.9 8z"/></svg>
+          Student डिस्काउंट पूछें
+        </a>
+      </div>
+    </div>
+    <div class="card">
+      <span class="stamp">STUDENT OFFER</span>
+      <h3>एग्ज़ाम सीज़न स्पेशल</h3>
+      <p>फॉर्म भरने, रिज़ल्ट देखने या ऑनलाइन क्लास के लिए कंप्यूटर की ज़रूरत हो तो बिना इंतज़ार के पहले नंबर पर सर्विस।</p>
+      <div class="id-row">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7F8798" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2"/><path d="M15 10h3M15 14h3"/></svg>
+        VALID STUDENT ID → छूट
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">कैसे ऑर्डर करें</span>
+      <h2>तीन आसान स्टेप</h2>
+    </div>
+    <div class="step-row">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>WhatsApp या कॉल करें</h3>
+        <p>अपनी ज़रूरत बताइए — नया PC, रिपेयर, सॉफ्टवेयर या एसेसरीज़, जो भी चाहिए।</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>जांच और कीमत तय</h3>
+        <p>डिवाइस दुकान लाइए या फोटो/जानकारी भेजिए, हम सही कीमत और समय बताएंगे।</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>तैयार डिवाइस ले जाइए</h3>
+        <p>काम पूरा होते ही सूचना — दुकान से ले जाइए, टेस्ट करके ही सौंपते हैं।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Kujur Collection</h4>
+        <p>Bhikhampur, Gumla, Jharkhand — कंप्यूटर, लैपटॉप और प्रिंटर की दुकान। असेंबल, रिपेयर, सर्विस और एसेसरीज़, सब एक ही छत के नीचे।</p>
+      </div>
+      <div>
+        <h4>सर्विसेज़</h4>
+        <ul>
+          <li><a class="flink" href="#services">नया PC असेंबल</a></li>
+          <li><a class="flink" href="#services">सेकंड हैंड PC/लैपटॉप</a></li>
+          <li><a class="flink" href="#services">विंडोज़ व सॉफ्टवेयर</a></li>
+          <li><a class="flink" href="#services">हार्डवेयर रिपेयर</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>संपर्क</h4>
+        <ul>
+          <li>📍 Opposite Bhikhampur Bazar Tand, Kujur Collection, Post Bhikhampur, District Gumla, Jharkhand — 835230</li>
+          <li>📞 <a class="flink" href="tel:+918210438195">+91 82104 38195</a></li>
+          <li>✉️ <a class="flink" href="mailto:kujurcollection143@gmail.com">kujurcollection143@gmail.com</a></li>
+          <li>🕘 सोम–शनि, सुबह 9 — शाम 7</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Kujur Collection. सर्वाधिकार सुरक्षित।</span>
+      <span class="mono">BHIKHAMPUR · GUMLA · JHARKHAND</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" id="float-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp पर ऑर्डर करें">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A9 9 0 003.5 17.9L2 22l4.2-1.4A9 9 0 1017.6 6.3zm-5.6 14a7.5 7.5 0 01-3.8-1l-.3-.2-2.8.9.9-2.7-.2-.3a7.5 7.5 0 1114.1-4.7 7.5 7.5 0 01-7.9 8z"/></svg>
+</a>
+
+<script>
+  // ----- दुकान का WhatsApp नंबर -----
+  const SHOP_WHATSAPP_NUMBER = "918210438195";
+
+  function waLink(message){
+    const text = encodeURIComponent(message);
+    return `https://wa.me/${SHOP_WHATSAPP_NUMBER}?text=${text}`;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const defaultMsg = "नमस्ते Kujur Collection, मुझे जानकारी चाहिए।";
+    document.getElementById("nav-wa").href = waLink(defaultMsg);
+    document.getElementById("hero-wa").href = waLink(defaultMsg);
+    document.getElementById("student-wa").href = waLink("नमस्ते, Student डिस्काउंट के बारे में जानना है।");
+    document.getElementById("float-wa").href = waLink(defaultMsg);
+
+    document.querySelectorAll(".bin-card .order").forEach(link => {
+      link.href = waLink(link.dataset.svc);
+    });
+
+    document.querySelectorAll("[data-sample]").forEach(link => {
+      link.href = waLink(link.dataset.sample);
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    // ----- PC Builder -----
+    const fields = {
+      cpu:   { el: document.getElementById("f-cpu"),   label: "प्रोसेसर" },
+      ram:   { el: document.getElementById("f-ram"),   label: "RAM" },
+      ssd:   { el: document.getElementById("f-ssd"),   label: "SSD" },
+      hdd:   { el: document.getElementById("f-hdd"),   label: "Hard Disk" },
+      gpu:   { el: document.getElementById("f-gpu"),   label: "ग्राफ़िक्स कार्ड" },
+      extra: { el: document.getElementById("f-extra"), label: "मॉनिटर/कैबिनेट" },
+      use:   { el: document.getElementById("f-use"),   label: "उपयोग" }
+    };
+    const nameEl = document.getElementById("f-name");
+    const phoneEl = document.getElementById("f-phone");
+    const noteEl = document.getElementById("f-note");
+    const ticketCount = document.getElementById("ticket-count");
+    const submitBtn = document.getElementById("builder-submit");
+
+    function updateTicket(){
+      let filled = 0;
+      Object.keys(fields).forEach(key => {
+        const val = fields[key].el.value;
+        const out = document.querySelector(`[data-out="${key}"]`);
+        const slot = fields[key].el.closest(".slot");
+        if(val){
+          out.textContent = val;
+          out.classList.remove("empty");
+          slot.classList.add("filled");
+          filled++;
+        } else {
+          out.textContent = "— चुना नहीं";
+          out.classList.add("empty");
+          slot.classList.remove("filled");
+        }
+      });
+      ticketCount.textContent = `${filled}/7 भरा`;
+      buildMessage();
+    }
+
+    function buildMessage(){
+      let msg = "नमस्ते Kujur Collection, मैं अपना PC इस तरह बनवाना चाहता/चाहती हूं:\n\n";
+      Object.keys(fields).forEach(key => {
+        const val = fields[key].el.value;
+        if(val) msg += `▪ ${fields[key].label}: ${val}\n`;
+      });
+      if(noteEl.value.trim()) msg += `▪ बजट/नोट: ${noteEl.value.trim()}\n`;
+      if(nameEl.value.trim()) msg += `\nनाम: ${nameEl.value.trim()}`;
+      if(phoneEl.value.trim()) msg += `\nमोबाइल: ${phoneEl.value.trim()}`;
+      submitBtn.href = waLink(msg);
+    }
+
+    Object.values(fields).forEach(f => f.el.addEventListener("change", updateTicket));
+    [nameEl, phoneEl, noteEl].forEach(el => el.addEventListener("input", buildMessage));
+
+    updateTicket();
+  });
+</script>
+
+</body>
+</html>
